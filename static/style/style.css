@@ -1,3 +1,27 @@
 .bg-center {
   background-position: center;
 }
+.form-outline {
+  position: relative;
+}
+.flex-fill {
+  flex: 1 1 auto !important;
+}
+.form-outline .form-control ~ .form-label {
+  position: absolute;
+  top: 0;
+  max-width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  left: 0.75rem;
+  padding-top: 0.37rem;
+  pointer-events: none;
+  transform-origin: 0 0;
+  transition: all 0.2s ease-out;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 0;
+}
+label {
+  display: inline-block;
+}

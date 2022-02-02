@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container my-5">
+    <form class="row g-3">
+        <div class="col-md-6">
+            <label for="contenttag" class="form-label">Tag</label>
+            <input type="text" class="form-control" id="contenttag">
+        </div>
+        <div class="col-md-6">
+            <label for="contenttitlek" class="form-label">Title</label>
+            <input type="text" class="form-control" id="contenttitlek">
+        </div>
+        <div class="col-2">
+            <label for="date" class="form-label">Current Date</label>
+            <input type="time" class="form-control" id="date" placeholder="1234 Main St">
+        </div>
+        <div class="col-12">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" id="description" rows="10" placeholder="description"></textarea>
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

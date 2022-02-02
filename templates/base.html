@@ -8,6 +8,8 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'style/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
     <title>Document</title>
 </head>
@@ -32,7 +34,7 @@
                         <a class="nav-link" href="#">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Create</a>
+                        <a class="nav-link" href="create">Create</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav mb-2 mb-lg-0">
@@ -42,7 +44,9 @@
                         </a>
                     </li>
                     <li>
-                        <button class="btn btn-outline-primary">Register</button>
+                        <a href="register">
+                            <button class="btn btn-outline-primary">Register</button>
+                        </a>
                     </li>
                 </ul>
             </div>
