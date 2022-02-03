@@ -1,4 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+from django.contrib.auth.models import User
+from django.contrib.auth import logout, login
+from django.contrib.auth import authenticate
 
 # Create your views here.
 def index(request):

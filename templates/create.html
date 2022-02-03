@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container my-5">
-    <form class="row g-3">
+    <form class="row g-3" method="post">
+        {% csrf_token %}
         <div class="col-md-6">
             <label for="contenttag" class="form-label">Tag</label>
             <input type="text" class="form-control" id="contenttag">
