@@ -3,9 +3,12 @@ from django.contrib.auth.models import User
 from django.contrib.auth import logout, login
 from django.contrib.auth import authenticate
 
+from home.models import Destination
+
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    dests=Destination.objects.all()
+    return render(request, 'index.html', {'dests': dests})
 def login(request):
     return render(request, 'login.html')
 def register(request):

@@ -76,8 +76,11 @@ WSGI_APPLICATION = 'blogapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'blog-auth',
+        'USER': 'postgres',
+        'PASSWORD': '55555',
+        'HOST': 'localhost'
     }
 }
 
@@ -128,3 +131,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
+
+MEDIA_URL='/media/'
+MEDIA_ROOT= BASE_DIR/ 'media'
