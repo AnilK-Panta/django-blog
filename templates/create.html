@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container my-5">
+    {% if user.is_authenticated %}
     <form class="row g-3" method="post">
         {% csrf_token %}
         <div class="col-md-6">
@@ -25,5 +26,9 @@
             <button type="submit" class="btn btn-primary">Upload</button>
         </div>
     </form>
+    {% else %}
+    <h2>Please Login to publish your blog</h2>
+    <a href="login">Login</a>
+    {% endif %}
 </div>
 {% endblock %}
