@@ -39,13 +39,14 @@
                 </ul>
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     {% if user.is_authenticated %}
-                    <li>
-                        <h2 class="me-2">{{user.username}}</h2>
-                    </li>
+
                     <li>
                         <a class="me-2" href="logout">
                             <button class="btn btn-outline-primary ">Logout</button>
                         </a>
+                    </li>
+                    <li class="prof-login me-2">
+                        <h2>{{user.username.0|capfirst}}</h2>
                     </li>
 
                     {% else %}
