@@ -1,4 +1,3 @@
-from unicodedata import name
 from django.db import models
 
 # Create your models here.
@@ -8,3 +7,15 @@ class Destination(models.Model):
     desc=models.TextField()
     price=models.IntegerField()
     offer=models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.desc
+
+class Blog(models.Model):
+    tag=models.CharField(max_length=100)
+    title=models.CharField(max_length=100)
+    curdate=models.DateField()
+    descr=models.TextField()
+
+    def __str__(self):
+        return self.title

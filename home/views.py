@@ -1,8 +1,11 @@
+import datetime
+from os import curdir
 from django.contrib import messages
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User, auth
 from django.contrib.auth import logout, login
 from django.contrib.auth import authenticate
+from home.models import Blog
 
 from home.models import Destination
 
@@ -51,8 +54,18 @@ def logout(request):
 def forgetpassword(request):
     return render(request, 'forgetpassword.html')
 def blog(request):
-    return render(request, 'blog.html')
+    blogs=Blog.objects.all()
+    return render(request, 'blog.html', {'blogs': blogs})
 def create(request):
-    return render(request, 'create.html')
+    if request.method=="POST":
+        tag=request.POST['tag']
+        title=request.POST['title']
+        curdate=datetime.date.now()
+        descr=request.POST['description']
+        blogpost=Blog(tag=tag, title=title, curdate=curdate, descr=descr)
+        blogpost.save()
+        return redirect("blog")
+    else:
+        return render(request, 'create.html')
 def contact(request):
     return render(request, 'contact.html')

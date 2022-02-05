@@ -5,19 +5,20 @@
         {% csrf_token %}
         <div class="col-md-6">
             <label for="contenttag" class="form-label">Tag</label>
-            <input type="text" class="form-control" id="contenttag">
+            <input type="text" name="tag" class="form-control" id="contenttag">
         </div>
         <div class="col-md-6">
             <label for="contenttitlek" class="form-label">Title</label>
-            <input type="text" class="form-control" id="contenttitlek">
+            <input type="text" name="title" class="form-control" id="contenttitlek">
         </div>
-        <div class="col-2">
+        <!-- <div class="col-2">
             <label for="date" class="form-label">Current Date</label>
-            <input type="time" class="form-control" id="date" placeholder="1234 Main St">
-        </div>
+            <input type="time" name="curdate" class="form-control" id="date" >
+        </div> -->
         <div class="col-12">
             <label for="description" class="form-label">Description</label>
-            <textarea class="form-control" id="description" rows="10" placeholder="description"></textarea>
+            <textarea class="form-control" name="description" id="description" rows="10"
+                placeholder="description"></textarea>
         </div>
 
         <div class="col-12">
