@@ -38,6 +38,17 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav mb-2 mb-lg-0">
+                    {% if user.is_authenticated %}
+                    <li>
+                        <h2 class="me-2">{{user.username}}</h2>
+                    </li>
+                    <li>
+                        <a class="me-2" href="logout">
+                            <button class="btn btn-outline-primary ">Logout</button>
+                        </a>
+                    </li>
+
+                    {% else %}
                     <li>
                         <a class="me-2" href="login">
                             <button class="btn btn-primary ">Login</button>
@@ -48,6 +59,7 @@
                             <button class="btn btn-outline-primary">Register</button>
                         </a>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
