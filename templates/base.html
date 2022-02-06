@@ -28,20 +28,20 @@
                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="blog">Blogs</a>
+                        <a class="nav-link" href="/blog">Blogs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="create">Create</a>
+                        <a class="nav-link" href="/create">Create</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav mb-2 mb-lg-0 d-flex align-items-center">
                     {% if user.is_authenticated %}
 
                     <li>
-                        <a class="me-2" href="logout">
+                        <a class="me-2" href="/logout">
                             <button class="btn btn-outline-primary ">Logout</button>
                         </a>
                     </li>
@@ -51,12 +51,12 @@
 
                     {% else %}
                     <li>
-                        <a class="me-2" href="login">
+                        <a class="me-2" href="/login">
                             <button class="btn btn-primary ">Login</button>
                         </a>
                     </li>
                     <li>
-                        <a href="register">
+                        <a href="/register">
                             <button class="btn btn-outline-primary">Register</button>
                         </a>
                     </li>

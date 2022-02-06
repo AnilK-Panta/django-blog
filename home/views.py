@@ -1,5 +1,6 @@
 import datetime
 from os import curdir
+from urllib import response
 from django.contrib import messages
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User, auth
@@ -60,12 +61,20 @@ def create(request):
     if request.method=="POST":
         tag=request.POST['tag']
         title=request.POST['title']
-        curdate=datetime.date.now()
+        curdate=datetime.date.today()
         descr=request.POST['description']
-        blogpost=Blog(tag=tag, title=title, curdate=curdate, descr=descr)
-        blogpost.save()
-        return redirect("blog")
+        if(title!="" and descr!="" and tag!=""):
+            blogpost=Blog(tag=tag, title=title, curdate=curdate, descr=descr)
+            blogpost.save()
+            return redirect("blog")
+        else:
+            messages.info(request, "Please Enter the field before submitting")
+            return redirect("create")
+        
     else:
         return render(request, 'create.html')
 def contact(request):
     return render(request, 'contact.html')
+def blogview(request,id, *args, **kwargs):
+    blog = Blog.objects.get(id=id)
+    return render(request, "blog-view.html", {'blog': blog})
