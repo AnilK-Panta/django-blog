@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container my-5">
-    {% if user.is_authenticated %}
     {% for message in messages %}
     {{message}}
     {% endfor %}
+    {% if user.is_authenticated %}
+
     <form class="row g-3" method="post">
         {% csrf_token %}
         <div class="col-md-6">

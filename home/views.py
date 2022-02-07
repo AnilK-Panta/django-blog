@@ -7,6 +7,7 @@ from django.contrib.auth.models import User, auth
 from django.contrib.auth import logout, login
 from django.contrib.auth import authenticate
 from home.models import Blog
+from django.contrib.auth.decorators import login_required
 
 from home.models import Destination
 
@@ -57,6 +58,14 @@ def forgetpassword(request):
 def blog(request):
     blogs=Blog.objects.all()
     return render(request, 'blog.html', {'blogs': blogs})
+
+def contact(request):
+    return render(request, 'contact.html')
+def blogview(request,id, *args, **kwargs):
+    blog = Blog.objects.get(id=id)
+    return render(request, "blog-view.html", {'blog': blog})
+
+@login_required(login_url='login')
 def create(request):
     if request.method=="POST":
         tag=request.POST['tag']
@@ -73,8 +82,3 @@ def create(request):
         
     else:
         return render(request, 'create.html')
-def contact(request):
-    return render(request, 'contact.html')
-def blogview(request,id, *args, **kwargs):
-    blog = Blog.objects.get(id=id)
-    return render(request, "blog-view.html", {'blog': blog})
