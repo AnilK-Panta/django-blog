@@ -70,16 +70,17 @@
                             {% csrf_token %}
                             <div class="col-md-6">
                                 <label for="contenttag" class="form-label">Tag</label>
-                                <input type="text" name="tag" class="form-control" id="contenttag">
+                                <input type="text" name="tag" value="{{blog.tag}}" class="form-control" id="contenttag">
                             </div>
                             <div class="col-md-6">
                                 <label for="contenttitlek" class="form-label">Title</label>
-                                <input type="text" name="title" class="form-control" id="contenttitlek">
+                                <input type="text" name="title" value="{{blog.title}}" class="form-control"
+                                    id="contenttitlek">
                             </div>
                             <div class="col-12">
                                 <label for="description" class="form-label">Description</label>
                                 <textarea class="form-control" name="description" id="description" rows="10"
-                                    placeholder="description"></textarea>
+                                    placeholder="description">{{blog.descr}}</textarea>
                             </div>
 
                             <div class="col-12">
